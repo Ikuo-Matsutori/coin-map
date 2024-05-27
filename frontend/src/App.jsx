@@ -87,7 +87,7 @@ function App() {
       <div className="result">
         <p id="total-profit">
           損益計：
-          {totalProfit || "Loading..."}
+          {Math.round(totalProfit) || "Loading..."}円
         </p>
         <p id="profit-ratio">コメント：{comment(totalProfit)}</p>
       </div>

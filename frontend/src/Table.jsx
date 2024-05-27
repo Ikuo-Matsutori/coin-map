@@ -1,3 +1,5 @@
+import "./Table.css";
+
 export default function Table(props) {
   const { list, deleteButton } = props;
 
@@ -13,7 +15,6 @@ export default function Table(props) {
           <th>現在価格(円)</th>
           <th>損益(円)</th>
           <th>利益率(%)</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -21,9 +22,15 @@ export default function Table(props) {
           <tr key={obj.id}>
             <td>{obj.ticker_symbol}</td>
             <td>{obj.wallet}</td>
-            <td>{obj.quantity}</td>
-            <td>{obj.unit_price}</td>
-            <td>{obj.total_price}</td>
+            <td>
+              {obj.quantity >= 1 ? Math.round(obj.quantity) : obj.quantity}
+            </td>
+            <td>
+              {obj.unit_price >= 1
+                ? Math.round(obj.unit_price)
+                : obj.unit_price}
+            </td>
+            <td>{Math.round(obj.total_price)}</td>
             <td>{obj.current_price || "Loading..."}</td>
             <td>
               {obj.current_price * obj.quantity - obj.total_price ||
