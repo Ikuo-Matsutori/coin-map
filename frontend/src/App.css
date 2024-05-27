@@ -1,0 +1,22 @@
+.input-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-button {
+  width: 150px;
+}
